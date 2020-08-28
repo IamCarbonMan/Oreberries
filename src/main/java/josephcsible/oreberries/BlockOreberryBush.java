@@ -156,8 +156,7 @@ public class BlockOreberryBush extends Block implements IPlantable {
 				return true;
 
 			world.setBlockState(pos, state.withProperty(AGE, 2));
-			// TODO 1.7.10 would always drop this rather than give it to a FakePlayer; see if this causes issues
-			ItemHandlerHelper.giveItemToPlayer(player, getBerriesStack(world.rand));
+			player.dropItem(getBerriesStack(world.rand), false);
 		}
 
 		return false;
